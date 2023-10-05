@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiPlatform\Tests\Fixtures\TestBundle\Entity;
 
 use ApiPlatform\Metadata\Operation;
-
 use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 
@@ -22,9 +21,9 @@ class DisableIdGeneration
     #[ApiProperty(genId: false)]
     public array $disableIdGenerationItems;
 
-    public static function provide(Operation $operation, array $uriVariables = [], array $context = []): array
+    public static function provide(Operation $operation, array $uriVariables = [], array $context = []): DisableIdGeneration
     {
-        return $context;
+        return new self();
     }
 }
 

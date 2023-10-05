@@ -21,6 +21,7 @@ Feature: Disable Id generation on anonymous resource collections
     }
     """
     Then the response status code should be 201
+    Then the JSON node "disableIdGenerationItems[0].@id" should not exist
     And the JSON should be equal to:
     """
     {
